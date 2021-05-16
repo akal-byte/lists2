@@ -9,14 +9,13 @@ println(fruits(listOf("mangoes","pineapples","guavas","avocados","bananas","oran
     )
     sorted(person)
     person1()
-   println( carList( (mutableListOf<Car>(
+    var cars=(mutableListOf<Car>(
         Car("KCT-678",12000),
         Car("KDB-684",14000),
         Car("KPA-678",6000),
 
-        ))))
-
-
+        ))
+    println(carList(cars))
 }
 fun fruits(fruitList:List<String>):List<String>{
     var fruit= listOf<String>()
@@ -53,18 +52,13 @@ fun person1(){
     println(person)
 }
 data class Car(var registration:String,var mileage:Int)
-fun carList(car:List<Car>):Int{
-    var cars=(mutableListOf<Car>(
-        Car("KCT-678",12000),
-        Car("KDB-684",14000),
-        Car("KPA-678",6000),
+fun carList(cars:List<Car>):Int{
 
-        ))
     var total=0
     for (car in cars){
        total+=car.mileage
     }
-    val avg=total/car.size
+    val avg=total/cars.size
     return avg
 }
 
